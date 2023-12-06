@@ -1,20 +1,15 @@
-const km = document.getElementById('km');
-console.log('km', km, typeof km);
+// ... Altre variabili
 
-const age = document.getElementById('age');
-console.log('age', age, typeof age);
+calcForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Impedisce il comportamento predefinito del form (ricaricamento della pagina)
 
-const calcButton = document.getElementById('calc-button');
-console.log('calcButton', calcButton, typeof calcButton);
-
-calcButton.addEventListener('click', function() {
     console.log('km.value', km.value, typeof km.value);
     console.log('age.value', age.value, typeof age.value);
 
     const kmInNumber = parseInt(km.value);
     const ageInNumber = parseInt(age.value);
 
-    let price = (kmInNumber * 0.21);
+    let price = kmInNumber * 0.21;
 
     // Applica sconti in base all'età
     if (ageInNumber < 18) {
