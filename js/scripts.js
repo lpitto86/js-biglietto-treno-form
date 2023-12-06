@@ -1,31 +1,31 @@
-// 1 ) Chiedi all'utente il numero di chilometri
-const chilometri = parseFloat(prompt('Inserisci il numero di km'));
-console.log('chilometri', chilometri, typeof chilometri);
+const km = document.getElementById('km');
+console.log('km', km, typeof km);
 
-// 2) chiedi all'utente la sua età
-const eta = parseInt(prompt('Quanti anni hai?'));
-console.log('Eta', eta, typeof eta);
+const age = document.getElementById('age');
+console.log('age', age, typeof age);
 
-// Funzione per calcolare la tariffa in base a chilometri ed età
-function calcolaTariffa(chilometri, eta) {
-    var costoBasePerChilometro = 0.21;
-    var costoTotale = chilometri * costoBasePerChilometro;
+const calcButton = document.getElementById('calc-button');
+console.log('calcButton', calcButton, typeof calcButton);
+
+calcButton.addEventListener('click', function() {
+    console.log('km.value', km.value, typeof km.value);
+    console.log('age.value', age.value, typeof age.value);
+
+    const kmInNumber = parseInt(km.value);
+    const ageInNumber = parseInt(age.value);
+
+    let price = (kmInNumber * 0.21);
 
     // Applica sconti in base all'età
-    if (eta < 18) {
+    if (ageInNumber < 18) {
         // Sconto del 20% per i minorenni
-        costoTotale *= 0.8;
-    } else if (eta >= 65) {
+        price *= 0.8;
+    } else if (ageInNumber > 65) {
         // Sconto del 40% per gli anziani
-        costoTotale *= 0.6;
+        price *= 0.6;
     }
 
-    return costoTotale;
-}
+    console.log('price', price, typeof price);
 
-// Calcola il costo totale
-const costoTotale = calcolaTariffa(chilometri, eta);
-
-// Mostra il risultato
-const resultContainer = document.querySelector('#result-container');
-resultContainer.textContent = "Il costo del biglietto è: " + costoTotale.toFixed(2) + " euro";
+    price = price.toFixed(2);
+});
