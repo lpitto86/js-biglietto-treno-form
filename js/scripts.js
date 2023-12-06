@@ -27,4 +27,5 @@ function calcolaTariffa(chilometri, eta) {
 const costoTotale = calcolaTariffa(chilometri, eta);
 
 // Mostra il risultato
-alert("Il costo del biglietto è: " + costoTotale.toFixed(2) + " euro");
+const resultContainer = document.querySelector('#result-container');
+resultContainer.textContent = "Il costo del biglietto è: " + costoTotale.toFixed(2) + " euro";
