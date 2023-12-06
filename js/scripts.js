@@ -1,13 +1,17 @@
-// ... Altre variabili
+// Dichiarazione di calcForm all'inizio
+const calcForm = document.getElementById('calcForm');
+const resultName = document.getElementById('resultName');
+const resultKm = document.getElementById('resultKm');
+const resultAge = document.getElementById('resultAge');
+const resultPrice = document.getElementById('resultPrice');
+const resetButton = document.getElementById('reset-button');
 
 calcForm.addEventListener('submit', function(event) {
-    event.preventDefault(); // Impedisce il comportamento predefinito del form (ricaricamento della pagina)
+    event.preventDefault();
 
-    console.log('km.value', km.value, typeof km.value);
-    console.log('age.value', age.value, typeof age.value);
-
-    const kmInNumber = parseInt(km.value);
-    const ageInNumber = parseInt(age.value);
+    const name = document.getElementById('name').value;
+    const kmInNumber = parseInt(document.getElementById('km').value);
+    const ageInNumber = parseInt(document.getElementById('age').value);
 
     let price = kmInNumber * 0.21;
 
@@ -20,7 +24,17 @@ calcForm.addEventListener('submit', function(event) {
         price *= 0.6;
     }
 
-    console.log('price', price, typeof price);
+    // Mostra i risultati nel Milestone2
+    resultName.textContent = name;
+    resultKm.textContent = kmInNumber;
+    resultAge.textContent = ageInNumber;
+    resultPrice.textContent = price.toFixed(2) + " euro";
+});
 
-    price = price.toFixed(2);
+resetButton.addEventListener('click', function() {
+    // Pulisci i risultati quando viene premuto il pulsante "Annulla"
+    resultName.textContent = '';
+    resultKm.textContent = '';
+    resultAge.textContent = '';
+    resultPrice.textContent = '';
 });
