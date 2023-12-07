@@ -37,4 +37,7 @@ resetButton.addEventListener('click', function() {
     resultKm.textContent = '';
     resultAge.textContent = '';
     resultPrice.textContent = '';
+    document.getElementById('name').value = '';
+    document.getElementById('km').value = '';
+    document.getElementById('age').value = '';
 });

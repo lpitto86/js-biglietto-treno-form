@@ -22,8 +22,11 @@ body {
   }
   
   .form-row {
-      display: flex;
-      gap: 10px;
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
   
   label {
@@ -37,12 +40,12 @@ body {
   }
   
   button {
-      padding: 10px;
-      background-color: #4caf50; /* Verde */
-      color: #fff;
-      cursor: pointer;
-      border: none;
-      border-radius: 5px;
+    padding: 10px;
+    background-color: #4caf50; /* Verde */
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
   }
   
   button:hover {
